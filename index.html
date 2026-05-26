@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SHRED X - Coach Sportif</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>SHRED<span>X</span></h1>
+        <p>Objectif : Sèche Flash & Haut Sculpté</p>
+    </header>
+
+    <div class="consignes-strictes">
+        <strong>🔥 DIRECTIVES STRICTES DU COACH :</strong>
+        • Repos : 60s MAXIMUM entre les séries (Intensité Élevée).<br>
+        • Charge : Lourde mais contrôlée (Échec sur les dernières reps).<br>
+        • Focus : Tension maximale sur le haut, les jambes sont là pour le maintien.
+    </div>
+
+    <div class="days-container">
+
+        <!-- LUNDI -->
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Lundi : PUSH</h2>
+                    <p>Pec / Épaules / Triceps + HIIT</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Couché</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                    <div class="exe-tip">Explosif à la montée, contrôle la descente.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Incliné Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10-12 Reps</span></div>
+                    <div class="exe-tip">Focus sur le haut des pectoraux.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Militaire Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Gainage serré, pousse fort vers le ciel.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Élévations Latérales</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>12-15 Reps</span></div>
+                    <div class="exe-tip">Brûlure maximale recherchée sur le côté de l'épaule.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Extensions Triceps Corde</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Bloque les coudes contre tes côtes.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>🔥 CARDIO HIIT (Tapis)</span></div>
+                    <div class="exe-meta"><span>Durée : 15 min</span></div>
+                    <div class="exe-tip">30s SPRINT MAX / 30s Marche lente. À répéter 15 fois.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MARDI -->
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mardi : PULL</h2>
+                    <p>Dos / Biceps + Circuit Abdos</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tractions (Lestées / Machine)</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                    <div class="exe-tip">Cherche à ouvrir la cage thoracique en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tirage Horizontal Bûcheron</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps / bras</span></div>
+                    <div class="exe-tip">Tire avec le coude pour isoler le grand dorsal.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tirage Vertical Prise Large</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Contrôle l'extension en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Barre EZ</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Ne t'aide pas du dos, reste parfaitement droit.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Marteau Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Développe l'épaisseur de l'avant-bras et du biceps.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>⚡ CIRCUIT ABDOS EXPRESS</span></div>
+                    <div class="exe-meta"><span>3 Tours</span> <span>Non-stop</span></div>
+                    <div class="exe-tip">30s Crunchs + 30s Relevés de jambes + 45s Gainage planche.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MERCREDI -->
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mercredi : FULL HAUT</h2>
+                    <p>Volume Intensif (Choc Métabolique)</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Superset : Couché Haltères + Tirage Poitrine</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>10 Reps chaque</span></div>
+                    <div class="exe-tip">Enchaîne les deux exercices avant de prendre 60s de repos.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Dips (Buste penché)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>Max Reps</span></div>
+                    <div class="exe-tip">Penche le buste en avant pour cibler les pectoraux.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Oiseau Haltères</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Crucial pour donner un aspect bombé en 3D à l'épaule.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Biceps Poulie Basse</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Garde une tension continue tout au long du mouvement.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JEUDI -->
+        <div class="day-card rest-day-card">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Jeudi : REPOS RECHARGE</h2>
+                    <p class="rest-text">Récupération & Hydratation</p>
+                </div>
+                <i data-lucide="zap-off" class="rest-text"></i>
+            </div>
+        </div>
+
+        <!-- VENDREDI -->
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Vendredi : ÉPAULES & BRAS</h2>
+                    <p>Focus Largeur + Cardio LISS</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Arnold</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Rotation complète des poignets pendant la montée.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Élévations Latérales (Dégressif)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 + 10 Reps</span></div>
+                    <div class="exe-tip">10 reps lourdes + 10 reps 50% plus léger sans repos.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Barre au Front</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Garde les coudes serrés vers l'intérieur.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Incliné Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Étirement maximal en position basse.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>🏃 CARDIO LISS (Brûle-Gras)</span></div>
+                    <div class="exe-meta"><span>Durée : 30-40 min</span></div>
+                    <div class="exe-tip">Tapis incliné au maximum (12-15), marche rapide (5-6 km/h).</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAMEDI -->
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Samedi : JAMBES LIGHT & ABDOS</h2>
+                    <p>Entretien Léger Tonus</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Presse à Cuisses (Light)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Entretien musculaire pur. Ne va pas jusqu'à l'épuisement.</div>
+                </div>
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Leg Curl (Ischios)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Protège les genoux pour tes sessions de course à pied.</div>
+                </div>
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Extensions Mollets Debout</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Contraction forte d'une seconde en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Gainage Étoile / Dynamique</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>45 secondes</span></div>
+                    <div class="exe-tip">Rentre le ventre intensément pour travailler le transverse.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIMANCHE -->
+        <div class="day-card rest-day-card">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Dimanche : REPOS TOTAL</h2>
+                    <p class="rest-text">Recharge & Reset</p>
+                </div>
+                <i data-lucide="zap-off" class="rest-text"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CHRONO FLOTTANT -->
+    <div class="timer-container">
+        <div>
+            <div class="rest-title">Repos Chrono</div>
+            <div class="timer-display" id="time">01:00</div>
+        </div>
+        <button class="timer-btn" id="startBtn" onclick="toggleTimer()">
+            <i data-lucide="play" id="timerIcon"></i>
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "theme_color": "#080b11",
+  "background_color": "#080b11",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "SHRED X Coach",
+  "short_name": "SHRED X",
+  "description": "Programme musculation haute intensité et sèche flash.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
