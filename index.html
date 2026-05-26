@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SHRED X - Coach</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>SHRED<span>X</span></h1>
+        <p>Objectif : Sèche Flash & Haut Sculpté</p>
+    </header>
+
+    <div class="consignes-strictes">
+        <strong>🔥 DIRECTIVES STRICTES DU COACH :</strong>
+        • Repos : 60s MAXIMUM entre les séries (Intensité Élevée).<br>
+        • Charge : Lourde mais contrôlée (Échec sur les dernières reps).<br>
+        • Focus : Tension maximale sur le haut, les jambes travaillent avec ton sport extérieur.
+    </div>
+
+    <div class="days-container">
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Lundi : PUSH</h2>
+                    <p>Pec / Épaules / Triceps + HIIT</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item" data-id="lun-1">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Développé Couché</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                            <div class="exe-tip">Explosif à la montée, contrôle la descente.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M43,48 C46,47 50,49 50,49 C50,49 54,47 57,48 C59,52 57,58 50,59 C43,58 41,52 43,48 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="lun-2">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Développé Incliné Haltères</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10-12 Reps</span></div>
+                            <div class="exe-tip">Focus sur le haut des pectoraux.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M44,47 C47,46 50,48 50,48 C50,48 53,46 56,47 C57,49 55,52 50,53 C45,52 43,49 44,47 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="lun-3">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Développé Militaire Haltères</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                            <div class="exe-tip">Gainage serré, pousse fort vers le ciel.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M32,52 C30,56 31,61 33,63 C34,60 36,54 38,50 Z M68,52 C70,56 69,61 67,63 C66,60 64,54 62,50 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="lun-4">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Élévations Latérales</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>12-15 Reps</span></div>
+                            <div class="exe-tip">Brûlure maximale recherchée sur le côté de l'épaule.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M29,54 C28,58 29,62 31,64 L33,56 Z M71,54 C72,58 71,62 69,64 L67,56 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="lun-5">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Extensions Triceps Corde</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                            <div class="exe-tip">Bloque les coudes contre tes côtes.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M31,60 C30,65 31,72 32,78 L34,78 L33,60 Z M69,60 C70,65 69,72 68,78 L66,78 L67,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">🔥 CARDIO HIIT (Tapis)</div>
+                            <div class="exe-meta"><span>Durée : 15 min</span></div>
+                            <div class="exe-tip">30s SPRINT MAX / 30s Marche lente. À répéter 15 fois.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mardi : PULL</h2>
+                    <p>Dos / Biceps + Circuit Abdos</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item" data-id="mar-1">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Tractions (Lestées / Machine)</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                            <div class="exe-tip">Cherche à ouvrir la cage thoracique en haut.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M38,55 C42,58 45,55 50,58 C55,55 58,58 62,55 C64,68 58,80 50,82 C42,80 36,68 38,55 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mar-2">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Tirage Horizontal Bûcheron</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10 Reps / bras</span></div>
+                            <div class="exe-tip">Tire avec le coude pour isoler le grand dorsal.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M37,60 C40,62 43,60 45,64 L42,80 C38,76 36,68 37,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mar-3">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Tirage Vertical Prise Large</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                            <div class="exe-tip">Contrôle l'extension en haut.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M38,55 C42,58 45,55 50,58 C55,55 58,58 62,55 C64,68 58,80 50,82 C42,80 36,68 38,55 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mar-4">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Curl Barre EZ</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                            <div class="exe-tip">Ne t'aide pas du dos, reste parfaitement droit.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M33,60 C34,65 35,70 34,75 L36,75 L36,60 Z M67,60 C66,65 65,70 66,75 L64,75 L64,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mar-5">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Curl Marteau Haltères</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                            <div class="exe-tip">Développe l'épaisseur de l'avant-bras et du biceps.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M29,66 C29,72 31,78 32,84 L34,80 Z M71,66 C71,72 69,78 68,84 L66,80 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">⚡ CIRCUIT ABDOS EXPRESS</div>
+                            <div class="exe-meta"><span>3 Tours</span> <span>Non-stop</span></div>
+                            <div class="exe-tip">30s Crunchs + 30s Relevés de jambes + 45s Gainage planche.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mercredi : FULL HAUT</h2>
+                    <p>Volume Intensif (Choc Métabolique)</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item" data-id="mer-1">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Superset : Couché + Tirage</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>10 Reps chaque</span></div>
+                            <div class="exe-tip">Enchaîne les deux exercices sans temps de repos.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M43,48 C46,47 50,49 50,49 C50,49 54,47 57,48 C59,52 57,58 50,59 C43,58 41,52 43,48 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mer-2">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Dips (Buste penché)</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>Max Reps</span></div>
+                            <div class="exe-tip">Penche le buste en avant pour cibler le bas des pectoraux.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M42,50 C45,52 48,53 50,53 C52,53 55,52 58,50 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mer-3">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Oiseau Haltères</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                            <div class="exe-tip">Crucial pour donner un aspect bombé à l'arrière de l'épaule.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M33,48 C31,52 32,56 35,54 Z M67,48 C69,52 68,56 65,54 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="mer-4">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Curl Biceps Poulie Basse</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>15 Reps</span></div>
+                            <div class="exe-tip">Garde une tension continue tout au long du mouvement.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M33,60 C34,65 35,70 34,75 L36,75 L36,60 Z M67,60 C66,65 65,70 66,75 L64,75 L64,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card rest-day-card">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Jeudi : REPOS RECHARGE</h2>
+                    <p class="rest-text">Récupération musculaire & Hydratation</p>
+                </div>
+                <i data-lucide="zap-off" class="rest-text"></i>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Vendredi : ÉPAULES & BRAS</h2>
+                    <p>Focus Largeur + Cardio LISS</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item" data-id="ven-1">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Développé Arnold</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>10 Reps</span></div>
+                            <div class="exe-tip">Rotation complète des poignets pendant la montée.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M32,52 C30,56 31,61 33,63 C34,60 36,54 38,50 Z M68,52 C70,56 69,61 67,63 C66,60 64,54 62,50 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="ven-2">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Élévations Latérales (Dégressif)</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10 + 10 Reps</span></div>
+                            <div class="exe-tip">10 reps lourdes + 10 reps plus légères sans pause.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M29,54 C28,58 29,62 31,64 L33,56 Z M71,54 C72,58 71,62 69,64 L67,56 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="ven-3">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Barre au Front</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                            <div class="exe-tip">Garde les coudes bien serrés vers l'intérieur.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M31,60 C30,65 31,72 32,78 L34,78 L33,60 Z M69,60 C70,65 69,72 68,78 L66,78 L67,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="ven-4">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Curl Incliné Haltères</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                            <div class="exe-tip">Étirement maximal du biceps en position basse.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M33,60 C34,65 35,70 34,75 L36,75 L36,60 Z M67,60 C66,65 65,70 66,75 L64,75 L64,60 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">🏃 CARDIO LISS (Brûle-Gras)</div>
+                            <div class="exe-meta"><span>Durée : 30-40 min</span></div>
+                            <div class="exe-tip">Tapis incliné au maximum (12-15), marche rapide (5-6 km/h).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Samedi : RAPPEL HAUT DU CORPS</h2>
+                    <p>Pec / Dos / Épaules + Core & Gainage</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item" data-id="sam-1">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Pompes lestées (ou Déclinées)</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12-15 Reps</span></div>
+                            <div class="exe-tip">Excellent exercice de finition pour congestionner la poitrine.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M43,48 C46,47 50,49 50,49 C50,49 54,47 57,48 C59,52 57,58 50,59 C43,58 41,52 43,48 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="sam-2">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Tirage Face Pull (Poulie Haute)</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                            <div class="exe-tip">Tire la corde vers ton nez. Renforce l'arrière d'épaule et la posture.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M33,48 C31,52 32,56 35,54 Z M67,48 C69,52 68,56 65,54 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="sam-3">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Rowing Assis à la poulie</div>
+                            <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                            <div class="exe-tip">Resserre fort les omoplates en fin de mouvement.</div>
+                            <div class="series-tracker" data-sets="3"></div>
+                        </div>
+                        <div class="anatomy-box back">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M38,55 C42,58 45,55 50,58 C55,55 58,58 62,55 C64,68 58,80 50,82 C42,80 36,68 38,55 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-item" data-id="sam-4">
+                    <div class="exe-container">
+                        <div class="exe-info">
+                            <div class="exe-header">Gainage Étoile / Dynamique</div>
+                            <div class="exe-meta"><span>4 Séries</span> <span>45 secondes</span></div>
+                            <div class="exe-tip">Rentre le ventre intensément pour forcer sur le transverse.</div>
+                            <div class="series-tracker" data-sets="4"></div>
+                        </div>
+                        <div class="anatomy-box">
+                            <svg viewBox="0 0 100 200" class="anatomy-svg"><path class="body-silhouette" d="M50,15 C45,15 42,22 42,28 C42,35 45,40 50,40 C55,40 58,35 58,28 C58,22 55,15 50,15 Z M42,42 L30,55 C27,58 24,70 24,85 C24,95 27,95 28,90 L32,65 L34,110 L34,190 L46,190 L48,120 L52,120 L54,190 L66,190 L66,110 L68,65 L72,90 C73,95 76,95 76,85 C76,70 73,58 70,55 L58,42 Z"/><path class="muscle-highlight" d="M44,65 L56,65 L54,85 L46,85 Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card rest-day-card">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Dimanche : REPOS TOTAL</h2>
+                    <p class="rest-text">Recharge complète & Reset système</p>
+                </div>
+                <i data-lucide="zap-off" class="rest-text"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="timer-container">
+        <div>
+            <div class="rest-title">REPOS CHRONO</div>
+            <div class="timer-display" id="time">01:00</div>
+        </div>
+        <button class="timer-btn" id="startBtn" onclick="toggleTimer()">
+            <i data-lucide="play" id="timerIcon"></i>
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
