@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SHRED X - Coach Sportif</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #1e293b;
+            --accent: #ff4757;
+            --accent-glow: rgba(255, 71, 87, 0.3);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #2ed573;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding-bottom: 90px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #fff;
+        }
+
+        header h1 span {
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        header p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .consignes-strictes {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid var(--accent);
+            margin: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .consignes-strictes strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .days-container {
+            padding: 10px 15px;
+        }
+
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-header {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .day-title h2 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .day-title p {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .day-content {
+            padding: 15px;
+            display: none;
+        }
+
+        .day-content.active {
+            display: block;
+        }
+
+        .exercise-item {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .exercise-item.leg-day {
+            border-left-color: #ffa500;
+        }
+
+        .exercise-item.cardio-day {
+            border-left-color: var(--success);
+        }
+
+        .exe-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .exe-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 15px;
+        }
+
+        .exe-tip {
+            font-size: 12px;
+            color: #cbd5e1;
+            font-style: italic;
+            margin-top: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Rest Timer Floating Bar */
+        .timer-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .timer-btn {
+            background: var(--accent);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .timer-display {
+            font-size: 18px;
+            font-weight: 700;
+            min-width: 50px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .rest-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SHRED<span>X</span></h1>
+        <p>Objectif : Sèche Flash & Haut Sculpté</p>
+    </header>
+
+    <div class="consignes-strictes">
+        <strong>🔥 DIRECTIVES STRICTES DU COACH :</strong>
+        • Repos : 60s MAXIMUM entre les séries (Intensité Élevée).<br>
+        • Charge : Lourde mais contrôlée (Échec sur les dernières reps).<br>
+        • Focus : Tension maximale sur le haut, les jambes sont là pour le maintien.
+    </div>
+
+    <div class="days-container">
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Lundi : PUSH</h2>
+                    <p>Pec / Épaules / Triceps + HIIT</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Couché (Barre ou Haltères)</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                    <div class="exe-tip">Explosif à la montée, contrôle la descente.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Incliné Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10-12 Reps</span></div>
+                    <div class="exe-tip">Focus sur le haut des pectoraux.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Développé Militaire Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Gainage serré, pousse fort vers le ciel.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Élévations Latérales Poulie ou Haltères</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>12-15 Reps</span></div>
+                    <div class="exe-tip">Brûlure maximale recherchée sur le côté de l'épaule.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Extensions Triceps Corde Poulie</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Bloque les coudes contre tes côtes.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>🔥 CARDIO HIIT (Tapis de course)</span></div>
+                    <div class="exe-meta"><span>Durée : 15 min</span></div>
+                    <div class="exe-tip">Alternance : 30s SPRINT MAX / 30s Marche lente. À répéter 15 fois.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mardi : PULL</h2>
+                    <p>Dos / Biceps + Circuit Abdos</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tractions (Lestées ou Machine)</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>8-10 Reps</span></div>
+                    <div class="exe-tip">Cherche à ouvrir la cage thoracique en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tirage Horizontal Bûcheron (Haltère)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps / bras</span></div>
+                    <div class="exe-tip">Tire avec le coude pour isoler le grand dorsal.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Tirage Vertical Prise Large</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Contrôle l'extension en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Barre EZ (Biceps)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Ne t'aide pas du dos, reste parfaitement droit.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Marteau Haltères</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Développe l'épaisseur de l'avant-bras et du biceps.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>⚡ CIRCUIT ABDOS EXPRESS</span></div>
+                    <div class="exe-meta"><span>3 Tours</span> <span>Sans repos entre exos</span></div>
+                    <div class="exe-tip">30s Crunchs + 30s Relevés de jambes + 45s Gainage planche.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Mercredi : FULL HAUT</h2>
+                    <p>Volume Intensif (Choc Métabolique)</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Superset : Développé Couché Haltères + Tirage Poitrine</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>10 Reps chaque</span></div>
+                    <div class="exe-tip">Enchaîne les deux exercices avant de prendre 60s de repos.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Dips (Pectoraux/Triceps)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>Max Reps</span></div>
+                    <div class="exe-tip">Penche le buste en avant pour cibler les pectoraux.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Oiseau Haltères (Arrière d'Épaule)</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Crucial pour donner un aspect bombé en 3D à l'épaule.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Biceps Poulie Basse</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Garde une tension continue tout au long du mouvement.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card" style="opacity: 0.7;">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Jeudi : REPOS RECHARGE</h2>
+                    <p style="color: var(--success);">Récupération & Hydratation</p>
+                </div>
+                <i data-lucide="zap-off" style="color: var(--success);"></i>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Vendredi : ÉPAULES & BRAS</h2>
+                    <p>Focus Largeur + Cardio LISS</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Superfonctions Épaules : Développé Arnold</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Rotation complète des poignets pendant la montée.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Élévations Latérales Haltères (Série Dégressive)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 + 10 Reps</span></div>
+                    <div class="exe-tip">Fais 10 reps lourdes, pose, prends 50% plus léger et refais 10 reps.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Barre au Front (Triceps)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Garde les coudes serrés vers l'intérieur.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Curl Incliné Haltères (Biceps)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>10 Reps</span></div>
+                    <div class="exe-tip">Étirement maximal en position basse.</div>
+                </div>
+                <div class="exercise-item cardio-day">
+                    <div class="exe-header"><span>🏃 CARDIO LISS (Brûle-Gras Ciblé)</span></div>
+                    <div class="exe-meta"><span>Durée : 30-40 min</span></div>
+                    <div class="exe-tip">Tapis incliné au maximum (Incline 12-15), vitesse marche rapide (5-6 km/h). Ne cours pas, marche activement.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header" onclick="toggleDay(this)">
+                <div class="day-title">
+                    <h2>Samedi : LEGS LIGHT & ABDOS</h2>
+                    <p>Entretien Léger Tonus</p>
+                </div>
+                <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="day-content">
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Presse à Cuisses (Light)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Entretien musculaire pur. Ne va pas jusqu'à l'épuisement.</div>
+                </div>
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Leg Curl (Ischios)</span></div>
+                    <div class="exe-meta"><span>3 Séries</span> <span>12 Reps</span></div>
+                    <div class="exe-tip">Protège les genoux pour tes sessions de course à pied.</div>
+                </div>
+                <div class="exercise-item leg-day">
+                    <div class="exe-header"><span>Extensions Mollets Debout</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>15 Reps</span></div>
+                    <div class="exe-tip">Contraction forte d'une seconde en haut.</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exe-header"><span>Gainage Étoile / Gainage Dynamique</span></div>
+                    <div class="exe-meta"><span>4 Séries</span> <span>45 secondes</span></div>
+                    <div class="exe-tip">Rentre le ventre intensément pour travailler le transverse (ventre plat).</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card" style="opacity: 0.7;">
+            <div class="day-header">
+                <div class="day-title">
+                    <h2>Dimanche : REPOS TOTAL</h2>
+                    <p style="color: var(--success);">Recharge & Reset</p>
+                </div>
+                <i data-lucide="zap-off" style="color: var(--success);"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="timer-container">
+        <div>
+            <div class="rest-title">Repos Chrono</div>
+            <div class="timer-display" id="time">01:00</div>
+        </div>
+        <button class="timer-btn" id="startBtn" onclick="toggleTimer()">
+            <i data-lucide="play" id="timerIcon"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialise les icônes Lucide
+        lucide.createIcons();
+
+        // Gestion de l'affichage des accordéons de fiches séances
+        function toggleDay(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('[data-lucide="chevron-down"]') || element.querySelector('[data-lucide="chevron-up"]');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                element.querySelector('i').setAttribute('data-lucide', 'chevron-down');
+            } else {
+                content.classList.add('active');
+                element.querySelector('i').setAttribute('data-lucide', 'chevron-up');
+            }
+            lucide.createIcons();
+        }
+
+        // Script du Compteur de Temps de Repos Intégré
+        let timeLeft = 60;
+        let timerId = null;
+        const display = document.getElementById('time');
+        const icon = document.getElementById('timerIcon');
+
+        function updateDisplay() {
+            let minutes = parseInt(timeLeft / 60, 10);
+            let seconds = parseInt(timeLeft % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+        }
+
+        function toggleTimer() {
+            if (timerId !== null) {
+                // Pause
+                clearInterval(timerId);
+                timerId = null;
+                icon.setAttribute('data-lucide', 'play');
+            } else {
+                // Lancement
+                if(timeLeft === 0) timeLeft = 60;
+                icon.setAttribute('data-lucide', 'pause');
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        clearInterval(timerId);
+                        timerId = null;
+                        timeLeft = 60;
+                        icon.setAttribute('data-lucide', 'play');
+                        // Optionnel : Vibration du téléphone à la fin du repos
+                        if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+                    }
+                    lucide.createIcons();
+                }, 1000);
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
