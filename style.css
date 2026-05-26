@@ -1,0 +1,262 @@
+:root {
+    --bg-color: #080b11;
+    --card-bg: #131a26;
+    --card-bg-header: #1b2537;
+    --accent: #ff4757;
+    --accent-glow: rgba(255, 71, 87, 0.4);
+    --text-main: #f8fafc;
+    --text-muted: #64748b;
+    --success: #2ed573;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding-bottom: 120px;
+}
+
+header {
+    background: linear-gradient(to bottom, #0f172a, rgba(15, 23, 42, 0.8));
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+header h1 span {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+header p {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.consignes-strictes {
+    background: rgba(255, 71, 87, 0.05);
+    border: 1px solid rgba(255, 71, 87, 0.25);
+    margin: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.consignes-strictes strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.days-container {
+    padding: 0 15px;
+}
+
+.day-card {
+    background-color: var(--card-bg);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.day-header {
+    background: var(--card-bg-header);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.day-title h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.day-title p {
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.day-content {
+    padding: 12px;
+    display: none;
+}
+
+.day-content.active {
+    display: block;
+}
+
+.exe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.exe-info {
+    flex: 1;
+}
+
+.exercise-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent);
+}
+
+.exercise-item.cardio-day {
+    border-left-color: var(--success);
+}
+
+.exe-header {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+}
+
+.exe-meta {
+    font-size: 11px;
+    color: #94a3b8;
+    margin: 4px 0;
+}
+
+.exe-meta span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.exe-tip {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* TRACKER DE SÉRIES */
+.series-tracker {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.set-checkbox {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid #334155;
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.set-checkbox.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* PLANCHE VECTORIELLE ANATOMIQUE */
+.anatomy-box {
+    width: 60px;
+    height: 90px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.anatomy-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.body-silhouette {
+    fill: #334155;
+    stroke: #475569;
+    stroke-width: 0.5;
+}
+
+.muscle-highlight {
+    fill: #ff4757;
+    filter: drop-shadow(0px 0px 3px var(--accent));
+}
+
+/* CHRONOMETRE FLOTTANT */
+.timer-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(19, 26, 38, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: calc(100% - 30px);
+    max-width: 340px;
+    z-index: 1000;
+}
+
+.timer-display {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: monospace;
+}
+
+.rest-title {
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.timer-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
