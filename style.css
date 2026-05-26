@@ -1,0 +1,70 @@
+:root {
+    --bg-color: #080b11;
+    --card-bg: #131a26;
+    --card-bg-header: #1b2537;
+    --accent: #ff4757;
+    --text-main: #f8fafc;
+    --text-muted: #64748b;
+    --success: #2ed573;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 span {
+    color: var(--accent);
+}
+
+.consignes-strictes {
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid var(--accent);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.day-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.day-header {
+    background: var(--card-bg-header);
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+}
+
+.day-content {
+    padding: 15px;
+    display: none;
+}
+
+.day-content.active {
+    display: block;
+}
+
+.exercise-item {
+    background: rgba(255,255,255,0.02);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
